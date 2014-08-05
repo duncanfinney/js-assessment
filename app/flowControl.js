@@ -11,6 +11,21 @@ define(function() {
       //
       // otherwise the function should return the number, or false if no number
       // was provided or the value provided is not a number
+      if (typeof num !== 'number') {
+        return false;
+      }
+
+      var divThree = (num % 3) === 0;
+      var divFive = (num % 5) === 0;
+      if (divThree && divFive) {
+        return 'fizzbuzz';
+      } else if (divThree) {
+        return 'fizz';
+      } else if (divFive) {
+        return 'buzz';
+      } else {
+        return num;
+      }
     }
   };
 });
